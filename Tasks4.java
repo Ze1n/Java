@@ -113,10 +113,6 @@ public class Tasks4 {
     public static void commonLastVowel(String... str)
     {
         Set<Character> gl= Stream.of('a','e','y','u','i','o').collect(Collectors.toSet());
-		/*for (int i=0; i<str.length; i++)
-		{
-			str[i].toLowerCase();
-		}*/
         Map<String, Long> rez=Arrays.stream(str).map(String::toLowerCase).
                 map(s->s.chars().mapToObj(c->(char)c).toArray(Character[]::new)).
                 flatMap(Arrays::stream).filter(gl::contains).
